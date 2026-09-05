@@ -1,0 +1,21 @@
+{
+  "name": "zensched",
+  "description": "Field workforce scheduling for AI agents. MCP path from schedule to GPS punches, forms, and timesheets. No dashboard required.",
+  "version": "1.0.0",
+  "author": {
+    "name": "ZenSched",
+    "url": "https://www.zensched.com"
+  },
+  "homepage": "https://www.zensched.com",
+  "repository": "https://github.com/zenschedmcp/zensched",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "scheduling",
+    "field-workforce",
+    "gps",
+    "timesheets"
+  ],
+  "skills": ["./skills/zensched"],
+  "mcpServers": "./.mcp.json"
+}
