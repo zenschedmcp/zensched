@@ -1,0 +1,19 @@
+{
+  "name": "zensched",
+  "version": "1.0.1",
+  "description": "Field workforce scheduling for AI agents. Schedule shifts, GPS-verified check-ins, forms, and timesheets via hosted MCP — no dashboard required.",
+  "author": {
+    "name": "ZenSched",
+    "url": "https://www.zensched.com"
+  },
+  "repository": "https://github.com/zenschedmcp/zensched",
+  "homepage": "https://www.zensched.com",
+  "license": "MIT",
+  "keywords": [
+    "zensched",
+    "zensched mcp",
+    "field-workforce",
+    "gps-verification",
+    "timesheets"
+  ]
+}

@@ -37,6 +37,22 @@ Account and guide tools work **before** a key exists. After `account_create`, pu
 
 Full tool list: [zensched.com/docs/tools](https://www.zensched.com/docs/tools/). Agent instructions: `skills/zensched/SKILL.md`.
 
+## Network and credentials
+
+This plugin calls **only** the ZenSched hosted MCP server. There is no bundled telemetry, no third-party analytics, and no code that reads local secrets beyond what the MCP client passes at connect time.
+
+| Surface | URL | Purpose |
+|---|---|---|
+| MCP (Streamable HTTP) | `https://mcp.zensched.com/mcp` | All scheduling, GPS, forms, and timesheet tools |
+| OAuth / Connect | `https://mcp.zensched.com/.well-known/oauth-protected-resource/mcp` | Browser sign-in when the client supports OAuth |
+| Docs / account | `https://www.zensched.com` | Quickstart, pricing, optional web signup and credit top-up |
+
+**Authentication:** `Authorization: Bearer zsc_…` (org-scoped API key) or OAuth access token after Connect. Keys are never committed in this repo — configure them in your Grok Build / Cursor / Claude MCP settings.
+
+**Billing:** Prepaid usage meters (worker invite, geocode, GPS verify, forms, processed timesheets). Unfunded orgs get 200 MCP calls/day. Fund via MCP `billing_attach_stripe` or [zensched.com/account](https://www.zensched.com/account). Live prices: [zensched.com/pricing](https://www.zensched.com/pricing/).
+
+**What this plugin ships:** one hosted MCP config (`.mcp.json`), one skill (`skills/zensched/SKILL.md`), and agent instructions. No hooks, shell scripts, or postinstall steps.
+
 ## Directory listing
 
 This repository exists so publisher forms that want a **public GitHub repo with `.mcp.json`** have something to scan. Submit:
@@ -45,7 +61,7 @@ This repository exists so publisher forms that want a **public GitHub repo with 
 
 at [cursor.directory/plugins/new](https://cursor.directory/plugins/new) (GitHub or Google sign-in). Auto-detect looks for `.mcp.json` at the repo root.
 
-Also listed on the [official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=zensched) as `com.zensched/zensched`, [Glama](https://glama.ai/mcp/connectors/com.zensched/zensched), [Smithery](https://smithery.ai/servers/mikef/zensched), and [mcp.so](https://mcp.so/servers/zensched).
+Also listed on the [official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=zensched) as `com.zensched/zensched`, [Glama](https://glama.ai/mcp/connectors/com.zensched/zensched), [Smithery](https://smithery.ai/servers/mikef/zensched), [mcp.so](https://mcp.so/servers/zensched), and [Cursor Directory](https://cursor.directory/plugins/zensched-field-workforce-scheduling-for-agents). Grok Build marketplace PR pending at [xai-org/plugin-marketplace](https://github.com/xai-org/plugin-marketplace).
 
 ## License
 

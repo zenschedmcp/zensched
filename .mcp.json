@@ -2,7 +2,8 @@
   "mcpServers": {
     "zensched": {
       "type": "streamable-http",
-      "url": "https://mcp.zensched.com/mcp"
+      "url": "https://mcp.zensched.com/mcp",
+      "note": "Hosted ZenSched MCP server. On first connect, authorize via OAuth (401 triggers browser Connect) or paste a zsc_ Bearer key when prompted. Call zensched_guide, then account_create(org_name) if you need a new org. Prepaid meters — see zensched.com/pricing."
     }
   }
 }
